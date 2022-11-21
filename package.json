@@ -1,0 +1,12 @@
+{
+  "name": "jsa-builder",
+  "version": "1.0.0",
+  "description": "JSA plugin to create a website with JSA template",
+  "main": "index.js",
+  "keywords": [
+    "JSA"
+  ],
+  "author": "AugustinMauroy",
+  "license": "MIT",
+  "type": "module"
+}

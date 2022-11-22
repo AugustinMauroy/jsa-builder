@@ -4,7 +4,7 @@
   "description": "JSA plugin to create a website with JSA template",
   "main": "index.js",
   "keywords": [
-    "JSA"
+    "jsalpha"
   ],
   "author": "AugustinMauroy",
   "license": "MIT",

@@ -1,5 +1,5 @@
 {
-  "name": "jsa-builder",
+  "name": "jsalpha-builder",
   "version": "1.0.0",
   "description": "JSA plugin to create a website with JSA template",
   "main": "index.js",
@@ -8,5 +8,9 @@
   ],
   "author": "AugustinMauroy",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "jsalpha": "^1.0.1",
+    "jsalpha-markdown": "^1.0.6"
+  }
 }

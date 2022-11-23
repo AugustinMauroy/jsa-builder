@@ -1,4 +1,10 @@
+# unix file
 .DS_store
 
+# Nodes file
 node_modules/
 package-lock.json
+
+# vscode file
+.vscode
+jsconfig.json

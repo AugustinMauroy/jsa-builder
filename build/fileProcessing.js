@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { jsaMD } from 'jsalpha-markdown';
+import { jsaMD, jsaGetTemplate } from 'jsalpha-markdown';
 
 export async function fileProcessing(file) {
     if (path.extname(file) == ".html"){
@@ -28,9 +28,10 @@ export async function fileProcessing(file) {
         })
       }
       if (path.extname(file) == ".md"){
-        fs.appendFile(`./_site/${path.basename(file, path.extname(file))}.html`, jsaMD(`./src/${file}`), function(err) {
+        var template = `./src/_template${jsaGetTemplate(`./src/${file}`)}`
+        fs.appendFile(`./_site/${path.basename(file, path.extname(file))}.html`, jsaMD(`./src/${file}`, template), function(err) {
           if(err) {
-              return console.log(err);
+              console.log(err);
           }else{
             console.log("\x1b[42m",`${file} are build`,"\x1b[0m")
           }

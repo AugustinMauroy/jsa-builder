@@ -11,6 +11,6 @@
   "type": "module",
   "dependencies": {
     "jsalpha": "^1.0.1",
-    "jsalpha-markdown": "^1.0.6"
+    "jsalpha-markdown": "^1.1.0"
   }
 }

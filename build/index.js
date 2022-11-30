@@ -3,11 +3,11 @@ import { fileMapping } from './fileMaping.js';
 
 export function build(){
   if (checkDirectory() === true) {
-    fs.readdirSync('./_site').forEach(f => fs.rmSync(`./_site/${f}`));
+      removeFile('./_site')
     }
     if (checkDirectory() === false) {
-      fs.mkdirSync('./_site',()=>{
-        console.log("created");
+      fs.mkdir('./_site',()=>{
+        console.log("\x1b[32m",'Success',"\x1b[0m",' "_site" had be created')
       });
     }
   
@@ -24,4 +24,18 @@ function checkDirectory(){
   } catch (error) {
     return false
   }
+};
+
+function removeFile(dirPath) {
+  try { var files = fs.readdirSync(dirPath); }
+  catch(e) { return; }
+  if (files.length > 0)
+    for (var i = 0; i < files.length; i++) {
+      var filePath = dirPath + '/' + files[i];
+      if (fs.statSync(filePath).isFile())
+        fs.unlinkSync(filePath);
+      else
+      removeFile(filePath);
+    }
+  fs.rmdirSync(dirPath);
 };

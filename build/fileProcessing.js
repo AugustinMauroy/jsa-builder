@@ -7,7 +7,7 @@ export async function fileProcessing(file) {
         fs.cp(`./src/${file}`, `./_site/${file}`, (err)=>{
           if(err) throw err
           else{
-            console.log("\x1b[42m",`${file} are build`,"\x1b[0m")
+            console.log("\x1b[32m","Success","\x1b[0m",`${file} build`)
           }
         })
       }
@@ -15,7 +15,7 @@ export async function fileProcessing(file) {
         fs.cp(file, `_site/${file}`, (err)=>{
           if(err) throw err 
           else{
-            console.log("\x1b[42m",`${file} are build`,"\x1b[0m")
+            console.log("\x1b[32m","Success","\x1b[0m",`${file} build`)
           }
         })
       }
@@ -23,7 +23,7 @@ export async function fileProcessing(file) {
         fs.cp(file, `_site/${file}`, (err)=>{
           if(err) throw err
           else{
-            console.log("\x1b[42m",`${file} are build`,"\x1b[0m")
+            console.log("\x1b[32m","Success","\x1b[0m",`${file} build`)
           }
         })
       }
@@ -33,7 +33,7 @@ export async function fileProcessing(file) {
           if(err) {
               console.log(err);
           }else{
-            console.log("\x1b[42m",`${file} are build`,"\x1b[0m")
+            console.log("\x1b[32m","Success","\x1b[0m",`${file} build`)
           }
         });
       }

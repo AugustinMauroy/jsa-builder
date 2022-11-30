@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { fileMapping } from './fileMaping.js';
 
 export function build(){
@@ -12,7 +11,9 @@ export function build(){
       });
     }
   
-  fileMapping('./src')
+  console.log("\x1b[32m",'Success',"\x1b[0m",'Build start')
+
+  fileMapping()
 };
 
 

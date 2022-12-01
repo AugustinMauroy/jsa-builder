@@ -9,6 +9,10 @@
   "author": "AugustinMauroy",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AugustinMauroy/jsa-builder"
+  },
   "dependencies": {
     "jsalpha": "^1.0.1",
     "jsalpha-markdown": "^1.1.0"

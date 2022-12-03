@@ -28,11 +28,21 @@ export async function fileProcessing(file) {
         })
       }
       if (path.extname(file) == ".md"){
-        var template = `./src/_template${jsaGetTemplate(`./src/${file}`)}`
-        fs.appendFile(`./_site/${path.basename(file, path.extname(file))}.html`, jsaMD(`./src/${file}`, template), function(err) {
-          if(err) {
-              console.log(err);
-          }else{
+        let fileWithoutExtension = file.substring(0, file.length - path.extname(file).length);
+        let template = `./src/_template${jsaGetTemplate(`./src/${file}`)}`
+        let sliced = file.split("/")
+
+        for (let i = 0; i < sliced.length - 1; i++){
+          if (path.extname(sliced[i]) == ""){
+            if (!fs.existsSync(`./_site/${sliced[i]}`)){
+              fs.mkdirSync(`./_site/${sliced[i]}`)
+            }
+          }
+        }
+        
+        fs.writeFile(`./_site/${fileWithoutExtension}.html`, jsaMD(`./src/${file}`, template), {encoding: "utf8"}, function(err) {
+          if(err) throw err
+          else {
             console.log("\x1b[32m","Success","\x1b[0m",`${file} build`)
           }
         });

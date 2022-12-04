@@ -16,9 +16,5 @@
   "dependencies": {
     "jsalpha": "^1.0.1",
     "jsalpha-markdown": "^1.1.0"
-  },
-  "scripts": {
-    "build": "node build.js",
-    "serve": "node serve.js"
   }
 }
